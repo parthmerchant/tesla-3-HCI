@@ -1,0 +1,102 @@
+* {
+  color: rgb(39, 39, 39);
+  font-family: monospace;
+}
+
+.option-container {
+  padding: 10px;
+  color: rgb(39, 39, 39);
+  text-decoration: none;
+}
+
+.portfolio-options {
+  list-style-type: none;
+  font-size: 18px;
+  padding: 5px;
+  float: left;
+  width: 100%;
+}
+
+.portfolio-options li {
+  padding: 5px;
+  margin: 5px;
+  float: left;
+  color: rgb(39, 39, 39);
+  font-weight: 600;
+}
+
+.port-option {
+  color: rgb(39, 39, 39);
+}
+
+.tesla-container {
+  padding: 10px;
+}
+
+.tesla-img {
+  height: 500px;
+  width: 750px;
+}
+
+/* Mobile Version */
+@media (max-width: 648px) {
+
+  .tesla-container {
+    padding: 5px;
+  }
+  .tesla-img{
+    height: 350px;
+    width: 550px;
+  } 
+  .option-container {
+      height: 750px;
+      padding-top: 100px;
+      overflow: scroll;
+  }
+
+  .portfolio-options li {
+      color: black;
+      border: none;
+      border-radius: none;
+      width: 100%;
+      font-size: 13px;
+  }    
+}
+
+/* Footer */
+.App-logo {
+  height: 8vmin;
+  pointer-events: none;
+}
+
+p {
+  font-size: 16px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(0, 0, 0);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
