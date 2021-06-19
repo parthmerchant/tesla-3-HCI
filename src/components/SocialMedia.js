@@ -1,5 +1,7 @@
 import React from 'react';
 import './Components.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 import img1 from '../images/content-one.png';
 import img2 from '../images/content-two.png';
@@ -9,6 +11,7 @@ import img5 from '../images/content-five.png';
 import img6 from '../images/content-six.png';
 
 function SocialMedia() {
+    AOS.init();
     return (
         <div>
             <div class="abstract">

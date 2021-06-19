@@ -1,13 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 * {
-  color: rgb(39, 39, 39);
   font-family: 'Roboto Mono', monospace;
-  font-weight: 600;
+  font-weight: 500;
+}
+
+p {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  width: 60%;
+}
+
+.main-container {
+  padding-top: 90px;
 }
 
 .option-container {
   padding: 10px;
-  color: rgb(39, 39, 39);
   text-decoration: none;
 }
 
@@ -23,12 +33,7 @@
   padding: 5px;
   margin: 5px;
   float: left;
-  color: rgb(39, 39, 39);
   font-weight: 600;
-}
-
-.port-option {
-  color: rgb(39, 39, 39);
 }
 
 .tesla-container {
@@ -56,8 +61,11 @@
       overflow: scroll;
   }
 
+  p {
+    width: 90%;
+  }
+
   .portfolio-options li {
-      color: black;
       border: none;
       border-radius: none;
       width: 100%;
@@ -69,10 +77,6 @@
 .App-logo {
   height: 8vmin;
   pointer-events: none;
-}
-
-p {
-  font-size: 16px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -87,7 +91,6 @@ p {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(0, 0, 0);
 }
 
 .App-link {
