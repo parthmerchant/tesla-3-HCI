@@ -1,10 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import { MdBrightness4 } from 'react-icons/md';
 
-import React, { Component } from 'react';
-import { NavLink, BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+
+import {ThemeProvider} from "styled-components";
+import { GlobalStyles } from "./components/globalStyles";
+import { lightTheme, darkTheme } from "./components/Themes"
 
 import TeslaImage from "./images/charlie-deets-D1W5QenBzlU-unsplash.jpg";
+
+import Navbar from './components/navbar/Navbar';
 
 import Usability from "./components/Usability";
 import Persona from "./components/Persona";
@@ -12,7 +19,7 @@ import SocialMedia from "./components/SocialMedia";
 import Prototype from "./components/Prototype";
 
 
-function Tesla(props) {
+function Tesla() {
     return (
         <div>
           <h2>TESLA MODEL 3 - Human-centered design</h2>
@@ -24,26 +31,24 @@ function Tesla(props) {
     );
 }
 
-class App extends Component{
 
-    // Bring window view to top on change
-    componentDidMount() {
-        window.scrollTo(0, 0)
+const App = () =>{
+
+    const [theme, setTheme] = useState('light');
+    const themeToggler = () => {
+        theme === 'light' ? setTheme('dark') : setTheme('light')
     }
-    
-    render(){
         return(
             <BrowserRouter>
                 <center>
+                <Navbar />
+                <div className="main-container">
+                <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+                <>
+                <GlobalStyles/>
                 <div className="option-container">
                     <center>
-                    <ul className="portfolio-options">
-                        <li><NavLink activeClassName='is-active' className="port-option" to="/">Tesla 3</NavLink></li>
-                        <li><NavLink activeClassName='is-active' className="port-option" to="/usability-evaluation">Usability Evaluation</NavLink></li>
-                        <li><NavLink activeClassName='is-active' className="port-option" to="/persona-design">Persona Design</NavLink></li>
-                        <li><NavLink activeClassName='is-active' className="port-option" to="social-media-content">Social Media Content</NavLink></li>
-                        <li><NavLink activeClassName='is-active' className="port-option" to="/prototype-design">Prototype Design</NavLink></li>
-                    </ul>
+                    <MdBrightness4 size="2em" onClick={themeToggler}/>
                     <br></br>
                     <Switch>
                         <Route exact path="/" component={() => <Tesla/>} />
@@ -59,10 +64,12 @@ class App extends Component{
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>Made with React<br></br>All photos from Unsplash & Pexels.</p>
                 </header>
+                </>
+                </ThemeProvider>
+                </div>
                 </center>
             </BrowserRouter>
         );
-    }
 }
 
 export default App;
